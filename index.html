@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ristorante Bella</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #333;
+color: #fff;
+padding: 20px;
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+}
+
+#search {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+main {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.menu-item {
+display: flex;
+align-items: center;
+padding: 15px;
+border-bottom: 1px solid #ccc;
+}
+
+.menu {
+width: 80%;
+margin: 0 auto;
+display: flex;
+}
+
+img {
+width: 40%;
+}
+
+.menu h2 {
+font-size: 1.5em;
+margin-bottom: 10px;
+}
+  .menu-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.add-to-cart {
+  padding: 5px 10px;
+  background: #333;
+  color: #fff;
+}
+
+</style>
+<script>
+const menuItems = [
+  {
+    name: 'Item 1',
+    price: '$5'
+  },
+  // other items
+]
+
+menuItems.forEach(item => {
+  const div = document.createElement('div')
+  div.classList.add('menu-item')
+
+  // add content
+  div.innerHTML = `
+    <h3>${item.name}</h3>
+    <p>${item.price}</p>
+
+    <button class="add-to-cart">
+      Add to Cart
+    </button>
+  `
+
+  document.querySelector('.menu').appendChild(div)
+})
+
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>Ristorante Bella</h1>
+
+<nav>
+<label for="search">Search:</label>
+<input type="text" id="search">
+<div id="cart">Cart</div>
+</nav>
+</header>
+
+<main>
+
+<div class="menu">
+<img src="restaurant.jpg" alt="Restaurant">
+
+  <div class="menu-item">
+  <!-- menu item content -->
+    <h2>Antipasti</h2>
+<p>Bruschetta - $8</p>
+<p>Garlic Bread - $6</p>
+
+  <button class="add-to-cart">Add to Cart</button> 
+</div>
+
+  <div class="menu-item">
+  <!-- menu item content -->
+    <h2>Pizza</h2>
+<p>Margherita - $12</p>
+<p>Diavola - $14</p>
+
+  <button class="add-to-cart">Add to Cart</button> 
+</div>
+<div class="menu-item">
+  <!-- menu item content -->
+<h2>Pasta</h2>
+<p>Spaghetti Bolognese - $10</p>
+<p>Lasagna - $12</p>
+  <button class="add-to-cart">Add to Cart</button> 
+</div>
+<div class="menu-item">
+  <!-- menu item content -->
+
+<h2>Desserts</h2>
+<p>Tiramisu - $6</p>
+<p>Gelato - $5</p>
+
+  <button class="add-to-cart">Add to Cart</button> 
+</div>
+
+</div>
+
+
+
+<div id="cart-items"></div>
+
+<button id="checkout">Checkout</button>
+
+</main>
+
+</body>
+</html>
